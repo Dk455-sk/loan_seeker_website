@@ -1,0 +1,105 @@
+<!-- templates/includes/header.html -->
+<style>
+  /* Navbar background gradient */
+  .navbar {
+    background: linear-gradient(90deg, #4e54c8, #8f94fb);
+  }
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.8rem;
+    color: #fff !important;
+    letter-spacing: 2px;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3);
+  }
+  .navbar-nav .nav-link {
+    color: #f0e9ff !important;
+    font-weight: 600;
+    transition: color 0.3s ease, background-color 0.3s ease;
+    padding: 8px 15px;
+    border-radius: 5px;
+  }
+  .navbar-nav .nav-link:hover,
+  .navbar-nav .nav-link:focus {
+    color: #4e54c8 !important;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(255, 255, 255, 0.6);
+  }
+  .dropdown-menu {
+    background: #fff;
+    border: none;
+    border-radius: 10px;
+    box-shadow: 0 8px 15px rgba(72, 65, 241, 0.3);
+  }
+  .dropdown-item {
+    color: #4e54c8 !important;
+    font-weight: 600;
+    padding: 10px 20px;
+    background-color: transparent !important;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+  .dropdown-item:hover,
+  .dropdown-item:focus {
+    background-color: #f0f0ff !important;
+    color: #4e54c8 !important;
+    box-shadow: none;
+  }
+  .navbar-toggler {
+    border: none;
+    outline: none;
+    box-shadow: none;
+  }
+  .navbar-toggler-icon {
+    filter: invert(100%);
+  }
+</style>
+
+<nav class="navbar navbar-expand-lg">
+  <div class="container">
+    <a class="navbar-brand" href="{% url 'home' %}">MyLoan</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ms-auto">
+        <!-- Loan dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="loanDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            Loan
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="loanDropdown">
+            <li><a class="dropdown-item" href="{% url 'bussiness_loan' %}">Business Loan</a></li>
+            <li><a class="dropdown-item" href="{% url 'home_loan' %}">Home Loan</a></li>
+            <li><a class="dropdown-item" href="{% url 'poperty_loan' %}">Loan Against Property</a></li>
+            <li><a class="dropdown-item" href="{% url 'personal_loan' %}">Personal Loan</a></li>
+          </ul>
+        </li>
+
+        <!-- SME Loan dropdown -->
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="smeLoanDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            SME Loan
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="smeLoanDropdown">
+            <li><a class="dropdown-item" href="{% url 'credit' %}">Cash Credit</a></li>
+            <li><a class="dropdown-item" href="{% url 'term'%}">Term Loan</a></li>
+            <li><a class="dropdown-item" href="{% url 'gureenty' %}">Bank Guarantee</a></li>
+            <li><a class="dropdown-item" href="{% url 'bill_discount' %}">Bill Discounting</a></li>
+          </ul>
+        </li>
+
+        <!-- Other nav items -->
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'emi_calculator' %}">EMI Calculator</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Blog</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contactus' %}">Contact Us</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>

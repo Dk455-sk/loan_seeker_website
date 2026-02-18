@@ -1,0 +1,159 @@
+<!-- templates/footer.html -->
+<style>
+  /* Footer custom style */
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-color: #f4f6f9;
+      color: #212529;
+    }
+
+    .hero-section {
+      background: linear-gradient(90deg, #0d6efd, #0a58ca);
+      color: white;
+      padding: 4rem 2rem;
+      text-align: center;
+    }
+
+    .hero-section h1 {
+      font-size: 2.8rem;
+      font-weight: 700;
+    }
+
+    .hero-section p {
+      font-size: 1.1rem;
+    }
+
+    .btn-scroll {
+      margin-top: 1.5rem;
+      padding: 12px 26px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      background-color: #ffc107;
+      color: #000;
+      font-weight: 500;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-scroll:hover {
+      background-color: #e0a800;
+      color: #fff;
+    }
+
+    .card-style {
+      border: none;
+      border-radius: 12px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+      /* background: #fff; */
+      padding: 2rem;
+      margin-bottom: 2rem;
+    }
+
+    .question-section {
+      /* background-color: #fff3cd; */
+      border-left: 5px solid #ffc107;
+      padding: 2rem;
+      border-radius: 10px;
+      margin-top: 3rem;
+    }
+
+    .form-placeholder {
+      background-color: #e9ecef;
+      padding: 4rem 2rem;
+      text-align: center;
+      border-radius: 10px;
+      margin-top: 3rem;
+    }
+
+    .form-placeholder h3 {
+      color:black;
+    }
+
+    .form-placeholder p {
+      color: #6c757d;
+      font-style: italic;
+    }
+
+    @media (max-width: 768px) {
+      .hero-section h1 {
+        font-size: 2rem;
+      }
+      .btn-scroll {
+        font-size: 1rem;
+        padding: 10px 20px;
+      }
+    }
+  footer {
+    background: linear-gradient(90deg, #8f94fb, #4e54c8);
+    color: #f0e9ff;
+    border-radius: 0 0 15px 15px;
+  }
+
+  footer p.mb-1 {
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-weight: 600;
+  }
+
+  footer p:last-child {
+    font-style: italic;
+    opacity: 0.8;
+  }
+</style>
+
+<footer class="text-center py-4">
+  <!-- Hero Section -->
+  <section class="hero-section">
+    <h1>Get In Touch</h1>
+    <p>We'd love to help you with any Loan or Financial service query. Let's connect!</p>
+    <a href="{% url 'loan_application' %}" class="btn-scroll">Send Message</a>
+  </section>
+
+  <!-- Contact Details Section -->
+  <div class="container mt-5">
+
+    <!-- Head Office -->
+    <div class="card-style">
+      <h4 class="text-dark mb-3">🏢 Head Office</h4>
+      <p><strong>Address:</strong> Block-11 Govind Nagar, Kanpur-208006, Uttar Pradesh, India</p>
+      <p><strong>Call Support:</strong><br>+91 9839 281 222<br>+91 9839 556 555</p>
+      <p><strong>Email:</strong> <a class="text-dark" href="mailto:infoloanwale@gmail.com">infoloanwale@gmail.com</a></p>
+      <p><strong>WhatsApp:</strong><br>+91 9839 281 222<br>+91 9839 556 555</p>
+    </div>
+
+    <!-- Branch Offices -->
+    <div class="card-style">
+      <h4 class="text-dark mb-3">🌍 Branch Offices</h4>
+      <div class="row">
+        <div class="col-md-4 mb-3">
+          <h6>KANPUR</h6>
+          <p>214, Krishna Tower, Civil Lines - 208001</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6>GURUGRAM</h6>
+          <p>Sector - 57, Gurugram - 122001</p>
+        </div>
+        <div class="col-md-4 mb-3">
+          <h6>LUCKNOW</h6>
+          <p>1st Floor, 6/77, Vineet Khand, Lucknow</p>
+        </div>
+      </div>
+      <p><strong>Branch Call Support:</strong><br>+91 8953 282 828, +91 9839 281 222</p>
+    </div>
+
+    <!-- Have a Question Section -->
+    <div class="question-section text-dark">
+      <h4>Have You Any Question About Us?</h4>
+      <p>Any type of Loan and Financial services related query — don’t hesitate to contact us for immediate customer support.</p>
+      <p><strong>Office Hours:</strong> Monday to Friday, 10:00 AM – 6:30 PM</p>
+    </div>
+  <div class="container">
+    <p class="mb-1">OUR ASSOCIATES</p>
+    <p class="mb-1">&copy; 2025 MyLoan. All Rights Reserved.</p>
+    <p class="mb-0">Designed By: KDS Tech</p>
+  </div>
+</footer>

@@ -1,0 +1,183 @@
+{% extends "layout/base.html" %}
+{% block homeblock %}
+{% load static %}
+
+<!-- Bootstrap & Icons -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+<style>
+  .apply-btn {
+    position: fixed;
+    top: 100px;
+    right: 20px;
+    z-index: 1050;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  }
+
+  .apply-btn:hover {
+    background-color: #0056b3;
+    color: white;
+  }
+
+  .section-box {
+    background-color: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    margin-bottom: 30px;
+  }
+
+  .section-title {
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  ul li::marker {
+    color: #007bff;
+  }
+</style>
+
+<!-- Floating Apply Button -->
+<a href="{% url 'loan_application' %}" class="apply-btn">
+  <i class="bi bi-rocket-takeoff"></i> Apply Now
+</a>
+
+<!-- Banner Image Section -->
+<div class="w-100">
+  <img src="{% static 'images/home1.jpg' %}" alt="Home Loan Banner"
+       class="img-fluid w-100" style="max-height: 400px; object-fit: cover;">
+</div>
+
+<!-- Main Container -->
+<div class="container my-5">
+
+  <!-- Heading -->
+  <h1 class="text-center mb-4">🏠 Home Loan Made Easy</h1>
+
+  <!-- Section: What is Home Loan -->
+  <div class="section-box">
+    <h2 class="section-title">What is a Home Loan?</h2>
+    <p>
+      A home loan is a secured loan offered by banks or financial institutions for the purchase, construction, or renovation of a residential or commercial property.
+    </p>
+    <ul>
+      <li>Loan amount up to 80–90% of the property value</li>
+      <li>Flexible repayment tenure (up to 30 years)</li>
+      <li>Lower interest rates compared to other loans</li>
+    </ul>
+  </div>
+
+  <!-- Section: Eligibility -->
+  <div class="section-box">
+    <h2 class="section-title">Eligibility Criteria</h2>
+    <ul>
+      <li>Age between 21 to 65 years</li>
+      <li>Minimum income threshold</li>
+      <li>Stable employment or business</li>
+      <li>Good CIBIL/credit score (preferably 750+)</li>
+    </ul>
+  </div>
+
+  <!-- Section: Required Documents -->
+  <div class="section-box">
+    <h2 class="section-title">Documents Required</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <h5>For Salaried</h5>
+        <ul>
+          <li>ID & Address Proof</li>
+          <li>Last 3 months salary slips</li>
+          <li>6 months bank statement</li>
+          <li>Form 16</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>For Self-Employed</h5>
+        <ul>
+          <li>Business registration proof</li>
+          <li>ITR of last 3 years</li>
+          <li>Bank statements</li>
+        </ul>
+      </div>
+      <div class="col-md-4">
+        <h5>Common</h5>
+        <ul>
+          <li>Passport-size photos</li>
+          <li>Loan application form</li>
+          <li>Processing fee cheque</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <!-- Section: Tips -->
+  <div class="section-box">
+    <h2 class="section-title">Tips Before Applying</h2>
+    <ul>
+      <li>Compare rates from different banks</li>
+      <li>Check EMI using a calculator</li>
+      <li>Choose suitable repayment tenure</li>
+      <li>Review processing fees & hidden charges</li>
+    </ul>
+  </div>
+
+  <!-- Section: FAQs -->
+  <div class="section-box">
+    <h2 class="section-title">FAQs</h2>
+    <div class="accordion" id="faqAccordion">
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingOne">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
+            What is the minimum credit score required?
+          </button>
+        </h2>
+        <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Most banks prefer a credit score of 750 and above for faster approval and better interest rates.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingTwo">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
+            Can I prepay my home loan?
+          </button>
+        </h2>
+        <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Yes, most floating-rate home loans have no prepayment charges as per RBI guidelines.
+          </div>
+        </div>
+      </div>
+
+      <div class="accordion-item">
+        <h2 class="accordion-header" id="headingThree">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
+            What is the maximum tenure for a home loan?
+          </button>
+        </h2>
+        <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body">
+            Typically, up to 30 years, depending on age and income.
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<!-- Optional: Bootstrap JS (if not already in base.html) -->
+<!-- 
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+-->
+
+{% endblock %}

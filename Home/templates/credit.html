@@ -1,0 +1,212 @@
+{% extends "layout/base.html" %}
+{% block homeblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Cash Credit</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+    body {
+      background: #f8f9fa;
+      color: #343a40;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    #applyBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1100;
+      background-color: #007bff;
+      border: none;
+      padding: 12px 22px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      text-decoration: none;
+      color: white;
+      display: inline-block;
+    }
+    #applyBtn:hover, #applyBtn:focus {
+      background-color: #0056b3;
+      box-shadow: 0 6px 18px rgba(0, 86, 179, 0.6);
+      color: white;
+      text-decoration: none;
+    }
+    section.container {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgb(0 0 0 / 0.1);
+      margin-bottom: 3rem;
+    }
+    h1, h2, h3, h4, h5 {
+      color: #004085;
+    }
+    ul {
+      padding-left: 1.5rem;
+    }
+    .highlight-section {
+      background: #e9f7ef;
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: inset 0 0 10px rgb(0 123 85 / 0.15);
+      margin-bottom: 2rem;
+    }
+    .diff-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 2rem;
+    }
+    .diff-table th,
+    .diff-table td {
+      border: 1px solid #dee2e6;
+      padding: 0.75rem 1rem;
+      vertical-align: top;
+    }
+    .diff-table th {
+      background-color: #cce5ff;
+      color: #004085;
+      font-weight: 600;
+      text-align: left;
+      width: 45%;
+    }
+    .diff-table td {
+      background-color: #f1f7ff;
+    }
+    @media (max-width: 767px) {
+      #applyBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        top: auto;
+        padding: 14px 28px;
+        font-size: 1.2rem;
+        border-radius: 60px;
+      }
+      section.container {
+        padding: 2rem 1rem;
+      }
+      .diff-table th,
+      .diff-table td {
+        display: block;
+        width: 100%;
+      }
+      .diff-table th {
+        border-bottom: none;
+      }
+      .diff-table td {
+        border-top: none;
+        margin-bottom: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Apply Button -->
+  <a href="{% url 'loan_application' %}" id="applyBtn">Apply for Personal Loan!</a>
+
+  <section class="container mt-5">
+    <h1 class="mb-4 text-center">CASH CREDIT</h1>
+
+    <p>Cash Credit (CC) is a source of short term finance for businesses and companies. Cash credits are also called working capital loans as they fund the instant cash requirements of the organizations, or to purchase current assets. Cash credit is a loan and banks demand collateral to approve it.</p>
+
+    <h4 class="mt-4">Important Features of Cash Credit</h4>
+    <ul>
+      <li><strong>Borrowing limit:</strong> A cash credit comes with a borrowing limit determined by the creditworthiness of the borrower. A company can withdraw funds up to its established borrowing limit.</li>
+      <li><strong>Interest on running balance:</strong> Interest is charged only on the running balance, not the total borrowing limit.</li>
+      <li><strong>Minimum commitment charge:</strong> Minimum charge applies whether or not the borrower utilizes the credit.</li>
+      <li><strong>Collateral security:</strong> Usually secured using stocks, fixed assets, or property.</li>
+      <li><strong>Credit period:</strong> Typically for 12 months, after which drawing power is re-evaluated.</li>
+    </ul>
+
+    <h4 class="mt-4">Example of Cash Credit</h4>
+    <p>Company A is a phone manufacturer operating a factory where capital is tied up in inventory. To meet expenses while waiting for sales, it takes a cash credit loan to maintain business operations without shortfall.</p>
+
+    <h4 class="mt-4">Advantages of Cash Credit</h4>
+    <ul>
+      <li>Source of working capital financing</li>
+      <li>Easy arrangement with collateral</li>
+      <li>Flexibility of multiple withdrawals up to borrowing limit</li>
+      <li>Tax-deductible interest payments</li>
+      <li>Interest charged only on utilized amount or minimum commitment charge</li>
+    </ul>
+
+    <h4 class="mt-4">Disadvantages</h4>
+    <ul>
+      <li>Higher interest rate than traditional loans</li>
+      <li>Minimum commitment charges apply even if unused</li>
+      <li>Can be difficult to secure for new companies</li>
+      <li>Temporary financing, must be renewed periodically</li>
+    </ul>
+
+    <h4 class="mt-4">Difference Between Overdraft (OD) and Cash Credit (CC)</h4>
+    <table class="diff-table">
+      <thead>
+        <tr>
+          <th>Cash Credit Account</th>
+          <th>Overdraft Account</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Normally given on security of stock, debtors etc.</td>
+          <td>Normally given on security of a fixed asset.</td>
+        </tr>
+        <tr>
+          <td>Max amount is calculated as % of sales and stock with financial statements.</td>
+          <td>Max amount mainly based on financial statements and security.</td>
+        </tr>
+        <tr>
+          <td>Should be used for business purpose.</td>
+          <td>Can be used for any purpose.</td>
+        </tr>
+        <tr>
+          <td>Balance Sheet, P & L account, VAT reports required annually or quarterly.</td>
+          <td>Financial statements generally not required after approval.</td>
+        </tr>
+        <tr>
+          <td>Insurance of stock is normally required.</td>
+          <td>Insurance of property is generally required.</td>
+        </tr>
+        <tr>
+          <td>New account often opened for cash credit facility.</td>
+          <td>Overdraft generally starts in existing current accounts.</td>
+        </tr>
+        <tr>
+          <td>Interest rate normally lower than overdraft.</td>
+          <td>Interest rate normally higher than cash credit.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h4 class="mt-4">Additional Notes</h4>
+    <p>A businessman can opt for long-term funding (like Loan Against Property) or flexible funding (Cash Credit or Overdraft). Long-term funding generally has lower interest rates, while flexible funding saves interest by depositing extra funds and paying interest only on needed amounts.</p>
+
+    <h4 class="mt-4">What Is OD Account?</h4>
+    <p>OD account stands for Overdraft account allowing withdrawal even if the account balance is zero, up to a sanctioned limit. Interest is paid only on the amount used. It is a current account with unlimited transactions and daily interest calculation.</p>
+
+    <h4 class="mt-4">Points to consider while taking CC or OD facility</h4>
+    <ul>
+      <li>Interest rates are generally higher than fixed loans like Loan Against Property (LAP).</li>
+      <li>Processing fees typically range from 0.5% to 0.75% but can be negotiated.</li>
+      <li>Minimum usage conditions may apply, with penalties if not met.</li>
+      <li>Account closing (foreclosure) charges usually range from 1% to 2%.</li>
+      <li>Some banks require monthly interest payments to be deposited by a deadline.</li>
+    </ul>
+
+    <p>The charges can be significant if conditions aren't met. Always check the terms and charges with your bank before opening an account.</p>
+  </section>
+
+ 
+
+</body>
+</html>
+{% endblock %}

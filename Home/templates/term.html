@@ -1,0 +1,160 @@
+{% extends "layout/base.html" %}
+{% block homeblock %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Term Loans</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" />
+  
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    /* Fixed Apply Button */
+    #applyBtn {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      z-index: 1100;
+      background-color: #007bff; /* Bootstrap primary blue */
+      border: none;
+      padding: 12px 22px;
+      font-size: 1.1rem;
+      border-radius: 50px;
+      box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+    }
+    #applyBtn:hover, #applyBtn:focus {
+      background-color: #0056b3;
+      box-shadow: 0 6px 18px rgba(0, 86, 179, 0.6);
+      text-decoration: none;
+      color: white;
+    }
+
+    /* Section Styling */
+    body {
+      background: #f8f9fa;
+      color: #343a40;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+
+    section.container {
+      background: white;
+      padding: 3rem 2rem;
+      border-radius: 10px;
+      box-shadow: 0 6px 18px rgb(0 0 0 / 0.1);
+      margin-bottom: 3rem;
+    }
+
+    h1, h2, h4, h5 {
+      color: #004085; /* Darker blue */
+    }
+
+    ul, ol {
+      padding-left: 1.5rem;
+    }
+
+    /* Pros and Cons Styling */
+    .pros-cons {
+      background: #e9f7ef; /* light green background */
+      border-radius: 8px;
+      padding: 1.5rem;
+      box-shadow: inset 0 0 10px rgb(0 123 85 / 0.15);
+    }
+
+    .pros-cons h5 {
+      color: #155724; /* dark green */
+      margin-bottom: 1rem;
+    }
+
+    /* Responsive tweaks */
+    @media (max-width: 767px) {
+      #applyBtn {
+        position: fixed;
+        bottom: 20px;
+        right: 20px;
+        top: auto;
+        padding: 14px 28px;
+        font-size: 1.2rem;
+        border-radius: 60px;
+      }
+      section.container {
+        padding: 2rem 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Apply Button fixed top-right (bottom-right on mobile) -->
+  <a href="{% url 'loan_application' %}" id="applyBtn" class="btn btn-primary shadow">
+    Apply for Personal Loan!
+  </a>
+
+  <!-- Term Loans Info Section -->
+  <section class="container mt-5">
+    <h1 class="mb-4 text-center">TERM LOANS</h1>
+
+    <p>A <strong>term loan</strong> is a monetary loan that is repaid in regular payments over a set period of time. Term loans usually last between one and ten years, but may last as long as 30 years in some cases. A term loan usually involves an unfixed interest rate that will add additional balance to be repaid.</p>
+
+    <h4 class="mt-4">Types of Term Loan</h4>
+    <ul>
+      <li><strong>Short-term Loan:</strong> Repaid within 12 months.</li>
+      <li><strong>Long-term Loan:</strong> Repaid over longer periods, typically 5 years or more.</li>
+    </ul>
+
+    <h4 class="mt-4">Term Loan Category</h4>
+    <ul>
+      <li><strong>Secured Loan:</strong> Requires collateral such as equipment, property, etc.</li>
+      <li><strong>Unsecured Loan:</strong> No collateral required but higher interest rates.</li>
+    </ul>
+
+    <h4 class="mt-4">Term Loan Examples related to Business Loan</h4>
+    <ul>
+      <li><strong>Working Capital Loan:</strong> Short-term funds to manage cash flow, repaid within 12 months.</li>
+      <li><strong>Overdraft:</strong> Credit limit with interest only on used amount, tenure 1-12 months.</li>
+      <li><strong>Equipment Financing:</strong> Financing for equipment or vehicles, loan amount varies widely.</li>
+    </ul>
+
+    <h4 class="mt-5 mb-3">Pros and Cons of Term Loan or Term Financing</h4>
+    <div class="row pros-cons">
+      <div class="col-md-6 mb-4 mb-md-0">
+        <h5>Pros</h5>
+        <ul>
+          <li>Lower Interest Rates</li>
+          <li>Higher Loan Amount</li>
+          <li>Loan approval within 59 minutes</li>
+          <li>Longer repayment tenure</li>
+          <li>Quick Loan amount disbursal</li>
+          <li>No Collateral required for Unsecured Business Loans</li>
+          <li>Interest paid is tax deductible</li>
+        </ul>
+      </div>
+      <div class="col-md-6">
+        <h5>Cons</h5>
+        <ul>
+          <li>Long-term burden of loan & EMIs on borrower</li>
+          <li>High CIBIL/credit score required</li>
+          <li>Guarantor is required</li>
+          <li>High business volume and vintage</li>
+          <li>Good business stability with profitability</li>
+          <li>Collateral required – Term loans are mostly secured</li>
+          <li>Non-repayment of loan/EMI results in high penalty</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+ 
+
+  <!-- Bootstrap JS Bundle (Optional for Bootstrap components, not needed here) -->
+  <!-- <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script> -->
+
+</body>
+</html>
+{% endblock %}

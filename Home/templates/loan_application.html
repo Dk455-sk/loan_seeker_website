@@ -1,0 +1,119 @@
+<!-- <h1>loan application form</h1>
+<form method="post">
+{%csrf_token%}
+your Name: <input type="text" name="name"><br>
+your Email: <input type="email" name="email"><br>
+your mobil: <input type="text" name="mobile"><br>
+Loan Amount:
+<select name="loanamount">
+    <option value="50000">₹50,000</option>
+    <option value="100000">₹1,00,000</option>
+    <option value="200000">₹2,00,000</option>
+    <option value="500000">₹5,00,000</option>
+    <option value="1000000">₹10,00,000</option>
+</select><br>
+
+Loan Tyype : <select name="loantype">
+<option value="Home Loan">Home Loan</option>
+<option value="Personal Loan">Personal Loan</option>
+<option value="Car Loan">Car Loan</option>
+<option value="Business Loan">Business Loan</option>
+<option value="Loan Against Property">Loan Against Property</option>
+</select><br>
+
+<input type="submit" name="btn" value="Submit">
+</form>
+{{msg}} -->
+
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Loan Application Form</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f8f9fa;
+      font-family: 'Segoe UI', sans-serif;
+    }
+    .form-container {
+      max-width: 600px;
+      margin: 50px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    }
+    h1 {
+      text-align: center;
+      margin-bottom: 30px;
+      color: #0d6efd;
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <div class="form-container">
+    <p class="text-primary">Are you looking for loan ? Then you are right place fillup the bellow form then our loan consultant will touch you.</p>
+    <h1>Apply for  Loan!</h1>
+    <form method="post">
+      {% csrf_token %}
+      
+      <div class="mb-3">
+        <label for="name" class="form-label">Your Name</label>
+        <input type="text" name="name" class="form-control" id="name" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Your Email</label>
+        <input type="email" name="email" class="form-control" id="email" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="mobile" class="form-label">Your Mobile</label>
+        <input type="text" name="mobile" class="form-control" id="mobile" required>
+      </div>
+
+      <div class="mb-3">
+        <label for="loanamount" class="form-label">Loan Amount</label>
+        <select name="loanamount" id="loanamount" class="form-select" required>
+          <option value="">-- Select Amount --</option>
+          <option value="50000">₹50,000</option>
+          <option value="100000">₹1,00,000</option>
+          <option value="200000">₹2,00,000</option>
+          <option value="500000">₹5,00,000</option>
+          <option value="1000000">₹10,00,000</option>
+        </select>
+      </div>
+
+      <div class="mb-4">
+        <label for="loantype" class="form-label">Loan Type</label>
+        <select name="loantype" id="loantype" class="form-select" required>
+          <option value="">-- Select Loan Type --</option>
+          <option value="Home Loan">Home Loan</option>
+          <option value="Personal Loan">Personal Loan</option>
+          <option value="Car Loan">Car Loan</option>
+          <option value="Business Loan">Business Loan</option>
+          <option value="Loan Against Property">Loan Against Property</option>
+        </select>
+      </div>
+
+      <button type="submit" name="btn" class="btn btn-primary w-100">Submit Application</button>
+    </form>
+
+    <!-- Display message if available -->
+    {% if msg %}
+      <div class="alert alert-info text-center mt-4">
+        {{ msg }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+</body>
+</html>
