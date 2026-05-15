@@ -82,29 +82,7 @@ Where:
 
 ---
 
-## 📷 Screenshots
 
-Create `assets/` folder and add screenshots.
-
-### Homepage
-![Homepage](assets/homepage.png)
-
-### Loan Types
-![Loan Types](assets/loan-types.png)
-
-### EMI Calculator
-![EMI](assets/emi.png)
-
-### Agent Dashboard
-![Dashboard](assets/agent-dashboard.png)
-
----
-
-## 🎥 Demo Video
-
-[![Watch Demo](assets/demo-thumbnail.png)](https://youtu.be/YOUR_VIDEO_LINK)
-
----
 
 ## ⚙ Installation
 
