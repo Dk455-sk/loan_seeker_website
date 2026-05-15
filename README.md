@@ -109,7 +109,7 @@ Create `assets/` folder and add screenshots.
 ## ⚙ Installation
 
 ```bash
-git clone https://github.com/yourusername/loan-application-portal.git
+git clone https://github.com/Dk455-sk/loan_seeker_website
 cd loan-application-portal
 pip install -r requirements.txt
 python manage.py migrate
